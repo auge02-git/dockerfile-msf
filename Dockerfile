@@ -1,6 +1,8 @@
-FROM ubuntu:23.10
+## FROM ubuntu:23.10
+FROM ubuntu:24.04
 
-MAINTAINER Phocean <jc@phocean.net>
+## MAINTAINER Phocean <jc@phocean.net>
+MAINTAINER auge02-git <andre@auge02.de>
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -19,8 +21,8 @@ WORKDIR /opt/
 # Installation
 RUN apt-get -qq update \
   && apt-get -yq install --no-install-recommends build-essential patch ruby-bundler ruby-dev zlib1g-dev liblzma-dev git autoconf build-essential libpcap-dev libpq-dev libsqlite3-dev \
-    postgresql postgresql-contrib postgresql-client dialog apt-utils \
-    ruby nmap nasm tmux vim \
+  postgresql postgresql-contrib postgresql-client dialog apt-utils \
+  ruby nmap nasm tmux vim \
   && echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections \
   && git clone https://github.com/rapid7/metasploit-framework.git \
   && cd metasploit-framework \
