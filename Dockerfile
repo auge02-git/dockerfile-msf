@@ -1,5 +1,6 @@
 ## FROM ubuntu:23.10
-FROM ubuntu:24.04
+# FROM ubuntu:24.04
+FROM {{baseimage}}:{{baseimage-verion}}
 
 ## MAINTAINER Phocean <jc@phocean.net>
 MAINTAINER auge02-git <andre@auge02.de>
